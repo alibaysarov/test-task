@@ -1,0 +1,89 @@
+@import _fonts
+*
+  margin: 0px
+  padding: 0px
+  box-sizing: border-box
+#app
+  overflow: hidden
+  display: grid
+  grid-template-columns: minmax(229px,229px) 1fr
+  grid-template-rows: minmax(100vh,auto) minmax(100%,auto)
+@media screen and ( min-width:650px)
+  p.table__label
+    display: none
+
+@media screen and ( max-width:1024px  )
+  #app
+    grid-template-columns: auto
+    grid-template-rows: auto
+  .table
+    &__row
+      display: grid !important
+      grid-gap: 10px
+      justify-content: space-between
+      grid-template-columns: 20px 20px minmax(20px,100px) 100px 100px 100px 100px
+    &__top
+      .table__row
+        display: flex
+        .table__cell
+          &.rb
+            display: block
+            width: 100px
+
+    &__body
+      .table__row
+        display: flex
+        .table__cell
+          &:has(svg)
+            width: 25px
+          input
+            width: 100%
+          &.rb
+            display: block
+            width: 100px
+    &__footer
+      .table__row
+        display: grid
+        grid-template-columns: repeat(2,1fr)
+      .table__cell:has(input)
+        display: block !important
+        width: 100%
+      .table__cell:last-of-type
+        display: block
+        width: 100%
+      .table__cell:not(:last-of-type)
+        display: none
+@media screen and (max-width:650px)
+  .table
+    &__label
+      color: #8f8f8f
+      font-family: $text
+      font-size: 11px
+      margin-bottom: 4px
+    &__row
+      height: 62px
+      overflow: hidden
+
+      border: 1px solid #ccc
+      border-right: 0px
+      border-left: 0px
+      margin-top: 5px
+      transition: height 0.2s ease
+      &.active
+        height: 100%
+    &__cell
+      &:has(svg)
+        padding-left: 10px
+    &__top
+      display: none !important
+    &__body
+      .table__row
+        grid-template-columns: auto
+        justify-content: unset !important
+        .table__cell
+          &.rb
+            width: 100%
+            border: 0px
+    &__footer
+      .table__row
+        grid-template-columns: 1fr
