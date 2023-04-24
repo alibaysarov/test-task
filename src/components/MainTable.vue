@@ -41,6 +41,7 @@ export default {
       oldId: "",
       newId: "",
       rows: store.state.table.rows,
+      tableMenu: ["Отображение столбцов", "Порядок столбцов"],
     };
   },
   methods: {
@@ -128,7 +129,7 @@ export default {
     style="border-radius: 10px; border: 1px dashed #eeeff1"
   >
     <Stack px="15px" style="width: 100%" dir="row" justifyContent="end">
-      <Settings />
+      <Settings :menu="tableMenu" />
     </Stack>
     <div class="table">
       <div class="table__top">
@@ -178,12 +179,7 @@ export default {
           >
             <div class="table__cell number">
               <Stack ml="15px" spacing="5px" alignItems="center">
-                <img
-                  src="/public/icons/Burger.png"
-                  width="11"
-                  height="12"
-                  alt=""
-                />
+                <img src="/icons/Burger.png" width="11" height="12" alt="" />
                 <Text color="black" fontSize="16px" fontFamily="secondary">{{
                   item.id
                 }}</Text>

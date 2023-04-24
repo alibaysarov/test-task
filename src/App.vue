@@ -69,7 +69,7 @@ export default {
       px="20px"
       style="border-radius: 10px; border: 1px dashed #eeeff1"
     >
-      <Button @click="addProduct" icon="/public/icons/Plus.png"
+      <Button @click="addProduct" icon="/icons/Plus.png"
         >Добавить строку</Button
       >
     </Paper>
