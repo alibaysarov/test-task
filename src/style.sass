@@ -60,17 +60,17 @@
       font-family: $text
       font-size: 11px
       margin-bottom: 4px
-    &__row
-      height: 62px
-      overflow: hidden
-
-      border: 1px solid #ccc
-      border-right: 0px
-      border-left: 0px
-      margin-top: 5px
-      transition: height 0.2s ease
-      &.active
-        height: 100%
+    &__body
+      .table__row
+        height: 62px
+        overflow: hidden
+        border: 1px solid #ccc
+        border-right: 0px
+        border-left: 0px
+        margin-top: 5px
+        transition: height 0.2s ease
+        &.active
+          height: 100%
     &__cell
       &:has(svg)
         padding-left: 10px
